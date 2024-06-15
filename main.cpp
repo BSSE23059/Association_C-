@@ -202,12 +202,12 @@ int main() {
                     cout << "Enter the student name :";
                     cin.ignore();
                     getline(cin, studentName);
-                    cout << "Enter the course title :";
-                    getline(cin, courseTitle);
                     searchStudent:
                     for (const auto &student : students) {
                         if (student->getStudentName() == studentName) {
                             studentFound = true;
+                            cout << "Enter the course title :";
+                            getline(cin, courseTitle);
                             searchCourse:
                             for(const auto& course : student->getEnrollments()){
                                 if(course->getCourse()->getCourseTitle() == courseTitle){
